@@ -132,6 +132,9 @@ module internal MarkdownUtils =
           | CodeBlock (code, _, _, _, _) ->
               yield code
               yield ""
+          | InlineHtmlBlock (code, _, _) ->
+              yield code
+              yield ""
           | ListBlock (Unordered, paragraphs, _) ->
               yield
                   (String.concat
